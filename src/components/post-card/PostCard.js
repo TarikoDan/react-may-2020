@@ -19,7 +19,7 @@ export function PostCard({ post, comments, author, hasImage }) {
         )}
         {!hasImage && (
             <div className="may-post-card-img">
-              <img src={DefaultImg} alt={'no img'} />
+              <img src={ DefaultImg } alt={'no img'} />
             </div>
         )}
 

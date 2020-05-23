@@ -19,14 +19,14 @@ function App() {
 
         <div className="d-flex posts-container posts">
             {
-              postsList.slice(0,12).map((item, index) => {
+              postsList.slice(0,12).map(( item, index) => {
                 const odd = index % 2 !== 0;
                 const comments = allComments.filter(value => value.post_id === item.id);
-                const user = usersList.find(value => value.id === item.user_id)
+                const user = usersList.find(value => value.id === item.user_id);
                   return <Card key={ item.id }
                                post={ item }
                                comments={ comments }
-                               author={ user }    /* ??? В чому мінус варіанту передати в пропсу масив user, а вже у Card його розібрати???*/
+                               author={ user }
                                hasImage={ odd } />
               })}
         </div>
@@ -47,7 +47,7 @@ function App() {
         <div className="d-flex posts-container users">
             {/*  todo: срендерить тут список пользователей, используя компонент UserCard */}
             {
-            usersList.map(value => {
+            usersList.map( value => {
                 return <User key={ value.id } user={ value }/>
             })}
         </div>
